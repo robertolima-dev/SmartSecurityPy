@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="SmartSecurityPy",
-    version="0.1.0",
+    version="1.0.0",
     description="🔐 Biblioteca de utilidades para hash de senha, criptografia e JWT em Python",
     author="Roberto Lima",
     author_email="robertolima.izphera@gmail.com",

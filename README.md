@@ -66,6 +66,56 @@ print(jwt_handler.is_token_valid(token))  # True
 
 ---
 
+### 🔍 Validação de Força de Senha
+```python
+from SmartSecurityPy import PasswordValidator
+
+# Cria uma instância do validador
+validator = PasswordValidator()
+
+# Valida uma senha
+result = validator.validate_password("minha_senha123")
+print(f"Score: {result.score}")  # Pontuação de 0-100
+print(f"É forte? {result.is_strong}")  # True/False
+print(f"Feedback: {result.feedback}")  # Lista de sugestões de melhoria
+
+# Obter sugestões específicas para melhorar a senha
+suggestions = validator.get_password_suggestions("senha_fraca")
+print(f"Sugestões: {suggestions}")
+```
+
+#### ✨ Características da Validação de Senha
+
+- 🎯 **Sistema de Pontuação (0-100)**
+  - Comprimento mínimo (8 caracteres): +20 pontos
+  - Comprimento extra (12+ caracteres): +10 pontos
+  - Cada tipo de caractere (maiúscula, minúscula, número, especial): +15 pontos
+  - Penalidades para senhas comuns: -30 pontos
+  - Penalidades para sequências/repetições: -10 pontos cada
+
+- 🚦 **Critérios de Validação**
+  - Comprimento mínimo obrigatório
+  - Presença de letras maiúsculas e minúsculas
+  - Inclusão de números
+  - Uso de caracteres especiais
+  - Verificação contra senhas comuns
+  - Detecção de sequências (ex: "123", "abc")
+  - Identificação de repetições (ex: "aaa")
+
+- 💡 **Feedback Inteligente**
+  - Sugestões específicas para melhorar a senha
+  - Identificação de pontos fracos
+  - Recomendações de melhoria
+  - Análise detalhada da força da senha
+
+- 🛡️ **Recursos de Segurança**
+  - Base de senhas comuns para comparação
+  - Detecção de padrões inseguros
+  - Avaliação de complexidade
+  - Recomendações baseadas em boas práticas
+
+---
+
 ## 📁 Estrutura do Projeto
 
 ```
